@@ -36,7 +36,6 @@ warp = "0.2"
 reqwest = "0.10.8"
 resiter = "0.4.0"
 im = "15.0.0"
-libzmq = "0.2.5"
 
 [dev-dependencies]
 pretty_assertions = "0.6.1"
