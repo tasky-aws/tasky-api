@@ -2,8 +2,6 @@
 name: Checks for package size bloat and comments on the PR
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
 
