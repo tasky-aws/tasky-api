@@ -149,9 +149,8 @@ async fn get_logs(
                         timestamp: event.timestamp,
                         token: None,
                     });
-                    match result {
-                        Ok(_) => {}
-                        Err(err) => error!("Some error sending event over channel {}", err),
+                    if let Err(err) = result {
+                        error!("Some error sending event over channel {}", err)
                     }
                 });
             }

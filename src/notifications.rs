@@ -3,10 +3,12 @@ use std::collections::HashMap;
 use std::sync::Arc;
 use std::sync::atomic::{AtomicUsize, Ordering};
 use std::sync::Mutex;
+use libzmq::{prelude::*, *};
 
-use futures::{Stream, StreamExt};
+use futures::{Stream, StreamExt, SinkExt};
 use tokio::sync::mpsc;
-use warp::{sse::ServerSentEvent};
+use warp::{sse::ServerSentEvent, Rejection};
+use anyhow::Context as AnyhowContext;
 
 // Our global unique user id counter.
 pub static NEXT_USER_ID: AtomicUsize = AtomicUsize::new(1);
@@ -91,4 +93,17 @@ pub fn build_fan_notifications(msg: String, users: &Subscribers) {
                 false
             }
         });
+}
+
+pub async fn handle_message(bytes: bytes::Bytes, mut client: Client) -> Result<impl warp::Reply, Rejection> {
+    let msg =  std::str::from_utf8(&bytes);
+    info!("sending");
+    if let Ok(msg) = msg {
+        info!("msg was ok");
+        if let Err(err) = client.send(msg) {
+            error!("failed to send to internal proxy!, {}", err)
+        }
+    }
+
+    Ok(warp::reply())
 }
