@@ -1,5 +1,9 @@
 # tasky-api
-This is the api for Tasky. It handles all requests to AWS
+_This was going through a period of rapid development to get a proof of concept working. I'm now slowly going through and adding
+better features/refactoring, so bear with me._
+
+This is the api for Tasky. It handles all requests to AWS, at present it handles retrieving logs from cloud watch in a stream-like 
+fashion, retrieving all ECS data.
 
 
 Theres some work to do for me to be happy with this as a proof of concept:
