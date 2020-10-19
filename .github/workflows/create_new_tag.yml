@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   bump_version:
     name: Bump version, create tag/release point
