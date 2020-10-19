@@ -35,13 +35,15 @@ jobs:
         uses: actions-rs/tarpaulin@v0.1
         with:
           args: '-t 640'
-          out-type: Lcov
-      - uses: romeovs/lcov-reporter-action@v0.2.16
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          lcov-file: ./lcov.info
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ${{ steps.coverage.outputs.report }}
+          yml: ./codecov.yml
+          fail_ci_if_error: true
       - name: Archive code coverage results
         uses: actions/upload-artifact@v1
         with:
           name: code-coverage-report
-          path: lcov.info
+          path: cobertura.xml
