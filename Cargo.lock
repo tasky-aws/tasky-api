@@ -1980,7 +1980,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "tasky"
+name = "tasky-api"
 version = "0.1.0"
 dependencies = [
  "anyhow",
