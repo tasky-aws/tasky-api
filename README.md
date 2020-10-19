@@ -3,16 +3,22 @@
 ![Audit-Check](https://github.com/tasky-aws/tasky-api/workflows/Audit-Check/badge.svg)
 
 _This was going through a period of rapid development to get a proof of concept working. I'm now slowly going through and adding
-better features/refactoring, so bear with me._
+better features/refactoring, so bear with me on the test/abstraction scenario._
 
 This is the api for Tasky. It handles all requests to AWS, at present it handles retrieving logs from cloud watch in a stream-like 
 fashion, retrieving all ECS data.
 
 
+Once the ZMQ integration is finished, i'll be happy to spend a bit more work getting this ready and refactoring. The intention is to support more
+stream-like AWS content and lets see if anything else with their UI will make me unhappy.
+## Getting started
+
+### Dependencies
+There are none, its an executable
+
 Theres some work to do for me to be happy with this as a proof of concept:
 - Write a decent readme
 - Write tests and post coverage (i have code for this but theres some work to do)
-- Build and release with CI
 
 Here's a dump of my TODO list:
 ```
