@@ -1,4 +1,7 @@
 # tasky-api
+[![codecov](https://codecov.io/gh/tasky-aws/tasky-api/branch/master/graph/badge.svg)](https://codecov.io/gh/AwesomeIbex/grekko)
+![Audit-Check](https://github.com/tasky-aws/tasky-api/workflows/Audit-Check/badge.svg)
+
 _This was going through a period of rapid development to get a proof of concept working. I'm now slowly going through and adding
 better features/refactoring, so bear with me._
 
