@@ -1,5 +1,5 @@
 [package]
-name = "tasky"
+name = "tasky-api"
 version = "0.1.0"
 authors = ["Donovan Dall <donovandall@icloud.com>"]
 edition = "2018"
