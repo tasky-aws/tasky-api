@@ -33,3 +33,6 @@ Improvements:
 
 
 ```
+
+# DISCLAIMER
+If tasky blows up your computer, loses your job or just deletes all your everything, I am NOT liable for anything. Also see the liability clause at the end of the new BSD licence text in the COPYRIGHT file.
